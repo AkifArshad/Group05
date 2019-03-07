@@ -16,9 +16,11 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 public class Start1 {
+	
+	Convert con = new Convert();
 
 	private JFrame frame;
-	private JTextField textField_input;
+	 JTextField textField_input;
 	private JLabel lblAmount;
 	private JLabel lblNewLabel;
 	private JComboBox startBox;
@@ -104,15 +106,27 @@ public class Start1 {
 				try {
 					input = Double.parseDouble(textField_input.getText());
 					if(startBox.getSelectedItem().equals("USD") && endBox.getSelectedItem().equals("Taka")) {
-						result = input * 80;
+						result = con.USDtoTAKA(input);
 						textField_ans.setText(Double.toString(result));
 					}
 					if(startBox.getSelectedItem().equals("Euro") && endBox.getSelectedItem().equals("Taka")) {
-						result = input * 96.08;
+						result = con.EUROtoTAKA(input);;
 						textField_ans.setText(Double.toString(result));
 					}
 					if(startBox.getSelectedItem().equals("Rupee") && endBox.getSelectedItem().equals("Taka")) {
-						result = input * 1.17;
+						result = con.RUPEEtoTAKA(input);;
+						textField_ans.setText(Double.toString(result));
+					}
+					if(startBox.getSelectedItem().equals("Taka") && endBox.getSelectedItem().equals("USD")) {
+						result = con.TAKAtoUSD(input);
+						textField_ans.setText(Double.toString(result));
+					}
+					if(startBox.getSelectedItem().equals("Taka") && endBox.getSelectedItem().equals("Euro")) {
+						result = con.TAKAtoEURO(input);;
+						textField_ans.setText(Double.toString(result));
+					}
+					if(startBox.getSelectedItem().equals("Taka") && endBox.getSelectedItem().equals("Rupee")) {
+						result = con.TAKAtoRUPEE(input);;
 						textField_ans.setText(Double.toString(result));
 					}
 			
