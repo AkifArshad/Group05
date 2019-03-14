@@ -1,5 +1,6 @@
 package CurrencyConverter;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -95,7 +96,7 @@ public class Start1 {
 		frame.getContentPane().add(endBox);
 		
 		lblResult = new JLabel("Result");
-		lblResult.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblResult.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblResult.setBounds(10, 158, 118, 20);
 		frame.getContentPane().add(lblResult);
 		
@@ -110,11 +111,11 @@ public class Start1 {
 						textField_ans.setText(Double.toString(result));
 					}
 					if(startBox.getSelectedItem().equals("Euro") && endBox.getSelectedItem().equals("Taka")) {
-						result = con.EUROtoTAKA(input);;
+						result = con.EUROtoTAKA(input);
 						textField_ans.setText(Double.toString(result));
 					}
 					if(startBox.getSelectedItem().equals("Rupee") && endBox.getSelectedItem().equals("Taka")) {
-						result = con.RUPEEtoTAKA(input);;
+						result = con.RUPEEtoTAKA(input);
 						textField_ans.setText(Double.toString(result));
 					}
 					if(startBox.getSelectedItem().equals("Taka") && endBox.getSelectedItem().equals("USD")) {
@@ -122,16 +123,42 @@ public class Start1 {
 						textField_ans.setText(Double.toString(result));
 					}
 					if(startBox.getSelectedItem().equals("Taka") && endBox.getSelectedItem().equals("Euro")) {
-						result = con.TAKAtoEURO(input);;
+						result = con.TAKAtoEURO(input);
 						textField_ans.setText(Double.toString(result));
 					}
 					if(startBox.getSelectedItem().equals("Taka") && endBox.getSelectedItem().equals("Rupee")) {
-						result = con.TAKAtoRUPEE(input);;
+						result = con.TAKAtoRUPEE(input);
 						textField_ans.setText(Double.toString(result));
 					}
+					
+					//For same input**
+					
+					if(startBox.getSelectedItem().equals("Taka") && endBox.getSelectedItem().equals("Taka")) {
+						con.InvalidInput();
+					}
+					
+					if(startBox.getSelectedItem().equals("USD") && endBox.getSelectedItem().equals("USD")) {
+						con.InvalidInput();
+					}
+					
+					if(startBox.getSelectedItem().equals("Euro") && endBox.getSelectedItem().equals("Euro")) {
+						con.InvalidInput();
+					}
+					
+					if(startBox.getSelectedItem().equals("Rupee") && endBox.getSelectedItem().equals("Rupee")) {
+						con.InvalidInput();
+					}
+					
+					
+					if (input < 0) {
+						 
+						    con.InvalidInput();
+						  
+					} 
+
 			
 				}catch(Exception e) {
-					JOptionPane.showMessageDialog(null, "Input is Invalid");
+					con.InvalidInput();
 				}
 			}
 		});
