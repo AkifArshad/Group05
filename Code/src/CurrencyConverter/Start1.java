@@ -1,6 +1,5 @@
 package CurrencyConverter;
 
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;

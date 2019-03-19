@@ -1,7 +1,6 @@
 package CurrencyConverter;
 
 
-
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -61,7 +60,9 @@ public class Convert  {
 	}
 	
 	public void InvalidInput() {
-		 JOptionPane.showMessageDialog(null, "Input is Invalid");
+		// JOptionPane.showMessageDialog(null, "Input is Invalid");
+		
+		
 	}
 	
 	
